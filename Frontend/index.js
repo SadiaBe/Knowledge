@@ -43,7 +43,7 @@ function displayTeacher(teacher){
 }
 
 function displayStudent(student){
-    
+
     let studentName = document.createElement("li")
     studentName.innerText = "Name:" + " " +`${student.name}`
 
@@ -51,6 +51,5 @@ function displayStudent(student){
     studentMajor.innerText ="Major:" + " " + `${student.major}`
 
     
-    // let teacherSubject = document.createElement("li")
     studentsList.append(studentName, studentMajor)
 }
