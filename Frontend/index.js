@@ -41,7 +41,6 @@ students.forEach((student) => {
 //   lectureTeacher.innerText = lecture.teacher
 
 //   lectureList.append(lectureTopic)
-
 // }
 
 function displayTeacher(teacher){
@@ -49,14 +48,18 @@ function displayTeacher(teacher){
 
     let teacherName = document.createElement("li")
     teacherName.innerText = "Name:" + " " +`${teacher.name}`
+    // teacherName.addEventListener("click", (e) =>{
+    //   console.log(e.target) not working 
+    //   })
 
     let classes = document.createElement("p")
-    classes.innerText = "Classes Taught by" + " " +`${teacher.name}`
-
+    classes.innerText = "Lectures Taught by :" + " " +`${teacher.name}`
     
+    teachersList.append(teacherName, classes)
     // console.log(eachTeachersLectures)
     // let teacherSubject = document.createElement("li")
-    teachersList.append(teacherName, classes)
+    
+    
 
 let allLectures = teacher.lectures
     let eachTeachersLectures = allLectures.forEach((lecture) => {
