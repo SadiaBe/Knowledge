@@ -1,5 +1,6 @@
 teachersList = document.querySelector("#teachers")
 studentsList = document.querySelector("#students")
+lectureList = document.querySelector("#lectures")
 
 // console.log(teachersList)
 
@@ -32,14 +33,42 @@ students.forEach((student) => {
 //   }) 
 // )
 
+// function displayLecture(lecture){
+//   let lectureTopic = document.createElement("p")
+//   lectureTopic.innerText = lecture.topic 
+
+//   let lectureTeacher = document.createElement("p")
+//   lectureTeacher.innerText = lecture.teacher
+
+//   lectureList.append(lectureTopic)
+
+// }
 
 function displayTeacher(teacher){
+
+
     let teacherName = document.createElement("li")
     teacherName.innerText = "Name:" + " " +`${teacher.name}`
 
+    let classes = document.createElement("p")
+    classes.innerText = "Classes Taught by" + " " +`${teacher.name}`
 
+    
+    // console.log(eachTeachersLectures)
     // let teacherSubject = document.createElement("li")
-    teachersList.append(teacherName)
+    teachersList.append(teacherName, classes)
+
+let allLectures = teacher.lectures
+    let eachTeachersLectures = allLectures.forEach((lecture) => {
+      //console.log(lecture.topic) this works 
+      // displayLecture(lecture)
+      let lectureTopic = document.createElement("p")
+      lectureTopic.className = "teachers-lectures"
+      lectureTopic.innerText = lecture.topic 
+      teachersList.append(lectureTopic)
+    })
+
+
 }
 
 function displayStudent(student){
